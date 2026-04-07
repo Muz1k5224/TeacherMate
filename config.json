@@ -1,0 +1,15 @@
+{
+  "_comment_interval": "签到检测轮询间隔，单位 ms",
+  "interval": 10000,
+  "_comment_wait": "检测到签到后等待时长，单位 ms",
+  "wait": 5000,
+  "_comment_gps": "用于 GPS 签到（大概是 Google 坐标）",
+  "lat": 30.511227,
+  "lon": 114.41021,
+
+  "qr": {
+    "_comment_mode": "terminal: 终端打印, plain: 打印URL, copy: 复制到剪贴板",
+    "mode": "terminal"
+  },
+  "ua": ""
+}
