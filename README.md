@@ -38,24 +38,19 @@ cp sample.config.json config.json
 
 ```javascript
 {
-  "interval": 10000, // 签到检测轮询间隔，单位 ms
-  "wait": 5000,     // 检测到签到后等待时长，单位 ms
-  // 用于 GPS 签到（大概是 Google 坐标）
-  "lat": 30.511227, // 纬度
-  "lon": 114.41021, // 经度
-  //剪贴板指令
-  "clipboard": { // 读写剪贴板的 CLI command
-    "paste": "pbpaste", // 若不为空，则优先尝试从剪贴板获取 openId
-    "copy": "echo {} | pbcopy", // qr.mode == "copy" 时启用，{} 为占位符
+  "_comment_interval": "签到检测轮询间隔，单位 ms",
+  "interval": 10000,
+  "_comment_wait": "检测到签到后等待时长，单位 ms",
+  "wait": 5000,
+  "_comment_gps": "用于 GPS 签到（大概是 Google 坐标）",
+  "lat": 30.511227,
+  "lon": 114.41021,
+
+  "qr": {
+    "_comment_mode": "terminal: 终端打印, plain: 打印URL, copy: 复制到剪贴板",
+    "mode": "terminal"
   },
-  "qr": { // 用于二维码签到
-    // 模式
-    //   terminal: 终端打印二维码，微信扫码
-    //   plain： 终端打印签到URL，微信打开
-    //   copy：同 plain，并复制到剪贴板
-    "mode": "terminal",
-  }
-  "ua": "" // 建议使用自己的微信 UA
+  "ua": ""
 }
 
 ```
